@@ -3,14 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HARD STOCK</title>
+    <title>About Us</title>
     <link rel="icon" type="image/svg+xml" href="{{ asset('image/logo.png') }}">
     <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('image/logo.png') }}">
     <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('image/logo.png') }}">
     <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('image/logo.png') }}">
     <link rel="icon" type="image/x-icon" href="{{ asset('image/logo.png') }}">
-    <link href="{{ asset('css/landing-page.css') }}" rel="stylesheet">
+     <link href="{{ asset('css/landing-page.css') }}" rel="stylesheet">
     <link href="{{ asset('css/home-page.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/about-page.css') }}" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -23,9 +24,9 @@
             </div>
             <div class="nav-right">
                 <ul class="nav-links">
-                    <li><a href="#" class="nav-link">Home</a></li>
+                    <li><a href="{{ url('/') }}" class="nav-link">Home</a></li>
                     <li><a href="#" class="nav-link">Products</a></li>
-                    <li><a href="#" class="nav-link">About</a></li>
+                    <li><a href="{{ url('/about') }}" class="nav-link active">About</a></li>
                     <li><a href="#" class="nav-link">Contact</a></li>
                 </ul>
                 <div class="search-bar">
@@ -52,216 +53,111 @@
         </div>
     </nav>
 
-    <!-- Hero Section with Image Slider -->
-    <section class="hero">
-        <div class="hero-slider">
-            <div class="slider-container">
-                <div class="slider-track">
-                    <div class="slide">
-                        <img src="{{ asset('image/tool1.png') }}" alt="Hardware Tools 1">
-                    </div>
-                    <div class="slide">
-                        <img src="{{ asset('image/tool2.jpg') }}" alt="Hardware Tools 2">
-                    </div>
-                    <div class="slide">
-                        <img src="{{ asset('image/tool3.png') }}" alt="Hardware Tools 3">
-                    </div>
-                    <div class="slide">
-                        <img src="{{ asset('image/tool4.jpg') }}" alt="Hardware Tools 4">
-                    </div>
+    
+<section class="about-hero">
+    <div class="container">
+        <div class="hero-content">
+            <div class="hero-stats">
+                <div class="stat">
+                    <div class="stat-number">50+</div>
+                    <div class="stat-label">Products</div>
                 </div>
-                
-                <!-- Slider Controls -->
-                <button class="slider-control slider-prev" onclick="changeSlide(-1)">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="white">
-                        <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
-                    </svg>
-                </button>
-                <button class="slider-control slider-next" onclick="changeSlide(1)">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="white">
-                        <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
-                    </svg>
-                </button>
-                
-                <!-- Slider Indicators -->
-                <div class="slider-indicators">
-                    <button class="indicator active" onclick="goToSlide(0)"></button>
-                    <button class="indicator" onclick="goToSlide(1)"></button>
-                    <button class="indicator" onclick="goToSlide(2)"></button>
-                    <button class="indicator" onclick="goToSlide(3)"></button>
+                <div class="stat">
+                    <div class="stat-number">5,000+</div>
+                    <div class="stat-label">Customers</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">5</div>
+                    <div class="stat-label">Years Experience</div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-  
-    <script>
-        // Hero Slider JavaScript
-        let currentSlide = 0;
-        const slides = document.querySelectorAll('.slide');
-        const indicators = document.querySelectorAll('.indicator');
-        const sliderTrack = document.querySelector('.slider-track');
-        const totalSlides = slides.length;
-
-        function showSlide(index) {
-            // Update indicators
-            indicators.forEach(indicator => indicator.classList.remove('active'));
-            indicators[index].classList.add('active');
-            
-            // Move slider track
-            const offset = -index * 100;
-            sliderTrack.style.transform = `translateX(${offset}%)`;
-        }
-
-        function changeSlide(direction) {
-            currentSlide += direction;
-            
-            if (currentSlide < 0) {
-                currentSlide = totalSlides - 1;
-            } else if (currentSlide >= totalSlides) {
-                currentSlide = 0;
-            }
-            
-            showSlide(currentSlide);
-        }
-
-        function goToSlide(index) {
-            currentSlide = index;
-            showSlide(currentSlide);
-        }
-
-        // Auto-slide functionality
-        function autoSlide() {
-            changeSlide(1);
-        }
-
-        // Start auto-slide
-        let slideInterval = setInterval(autoSlide, 5000); // Change slide every 5 seconds
-
-        // Pause auto-slide on hover
-        const sliderContainer = document.querySelector('.slider-container');
-        sliderContainer.addEventListener('mouseenter', () => {
-            clearInterval(slideInterval);
-        });
-
-        sliderContainer.addEventListener('mouseleave', () => {
-            slideInterval = setInterval(autoSlide, 5000);
-        });
-
-        // Initialize first slide
-        showSlide(0);
-
-        // Product Slider JavaScript
-        let currentProductSlide = 0;
-        const productCards = document.querySelectorAll('.product-card');
-        const productSliderTrack = document.querySelector('.product-slider-track');
-        const totalProductCards = productCards.length;
-        const visibleCards = 3; // Show 3 cards initially
-        const maxSlideIndex = totalProductCards - visibleCards;
-
-        function showProductSlide(index) {
-            // Handle infinite looping
-            if (index < 0) {
-                currentProductSlide = maxSlideIndex;
-            } else if (index > maxSlideIndex) {
-                currentProductSlide = 0;
-            } else {
-                currentProductSlide = index;
-            }
-            
-            // Calculate the offset (33.333% per card + 40px margins)
-            const offset = -currentProductSlide * (33.333 + (40 / 300));
-            productSliderTrack.style.transform = `translateX(${offset}%)`;
-        }
-
-        function changeProductSlide(direction) {
-            showProductSlide(currentProductSlide + direction);
-        }
-
-        showProductSlide(0);
-    </script>
-
-    <!-- New Arrival Section -->
-    <section class="new-arrival">
-        <div class="container">
-            <h2 class="section-title">New Arrival</h2>
-            <div class="product-slider">
-                <div class="product-slider-track">
-                    <div class="product-card">
-                        <div class="product-image">
-                            <img src="{{ asset('image/lawn mowers.png') }}" alt="Product 1">
-                        </div>
-                        <div class="product-info">
-                            <h3>Push Lawn Mower</h3>
-                            <div class="product-price">₱14,061.63</div>
-                            <button class="add-to-cart">Add to Cart</button>
-                        </div>
-                    </div>
-                    <div class="product-card">
-                        <div class="product-image">
-                            <img src="{{ asset('image/Leaf blower.png') }}" alt="Product 2">
-                        </div>
-                        <div class="product-info">
-                            <h3>Leaf Blower</h3>
-                            <div class="product-price">₱8,387.27</div>
-                            <button class="add-to-cart">Add to Cart</button>
-                        </div>
-                    </div>
-                    <div class="product-card">
-                        <div class="product-image">
-                            <img src="{{ asset('image/trimmers.png') }}" alt="Product 3">
-                        </div>
-                        <div class="product-info">
-                            <h3>String Trimmer</h3>
-                            <div class="product-price">₱7,500</div>
-                            <button class="add-to-cart">Add to Cart</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="view-more-container">
-                <button class="view-more-btn">View More Products</button>
-            </div>
-        </div>
-    </section>
-
-    <!-- Sponsors Section -->
-    <section class="sponsors-section">
+    <!-- About Us Section -->
+    <section class="about-section">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Trusted by Leading Brands</h2>
-                <p class="section-subtitle">We Partner with the Best in the Industry</p>
+                <h2 class="section-title">Our Story</h2>
             </div>
-            <div class="sponsors-grid">
-                <div class="sponsor-item">
-                    <div class="sponsor-logo">
-                        <img src="{{ asset('image/Snapon.png') }}" alt="Snap-on">
-                    </div>
-                </div>
-                <div class="sponsor-item">
-                    <div class="sponsor-logo">
-                        <img src="{{ asset('image/Craftsman.png') }}" alt="Craftsman">
-                    </div>
-                </div>
-                <div class="sponsor-item">
-                    <div class="sponsor-logo">
-                        <img src="{{ asset('image/Stanley.png') }}" alt="Stanley">
-                    </div>
-                </div>
-                <div class="sponsor-item">
-                    <div class="sponsor-logo">
-                        <img src="{{ asset('image/Bosch.png') }}" alt="Bosch">
-                    </div>
-                </div>
-                <div class="sponsor-item">
-                    <div class="sponsor-logo">
-                        <img src="{{ asset('image/Milwaukee.png') }}" alt="Milwaukee">
-                    </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Founded in 2020, HARD STOCK began as a small hardware store. Our passion for quality tools and commitment to customer service has helped us grow into one of the region's most trusted hardware suppliers.</p>
+                    <p>We understand that professionals and DIY enthusiasts need reliable tools they can count on. That's why we carefully curate our inventory to include only the best products from leading brands, ensuring that every item we sell meets our high standards for quality and durability.</p>
+                    <p>From construction professionals to home improvement enthusiasts, our mission is to provide the right tools for every project, backed by expert advice and exceptional service.</p>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Why Choose Us Section -->
+    <section class="why-us-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Why Choose HARD STOCK</h2>
+                <p class="section-subtitle">Excellence in Every Aspect of Our Service</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="#dc2626">
+                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                        </svg>
+                    </div>
+                    <h3>Premium Quality</h3>
+                    <p>We only stock products from reputable brands known for their durability and performance. Every tool in our inventory is tested and approved by our expert team.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="#dc2626">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/>
+                        </svg>
+                    </div>
+                    <h3>Competitive Pricing</h3>
+                    <p>We work directly with manufacturers and distributors to offer competitive prices without compromising on quality. Plus, we regularly run promotions and special offers.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="#dc2626">
+                            <path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/>
+                        </svg>
+                    </div>
+                    <h3>Fast Delivery</h3>
+                    <p>We offer quick and reliable delivery services throughout Cebu and surrounding areas. Most orders are delivered within 24-48 hours, ensuring you get your tools when you need them.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Values Section -->
+    <section class="values-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Our Values</h2>
+                <p class="section-subtitle">The Principles That Guide Everything We Do</p>
+            </div>
+            <div class="values-grid">
+                <div class="value-item">
+                    <h3>Integrity</h3>
+                    <p>We believe in honest business practices and transparent pricing. No hidden fees, no surprises – just straightforward service you can trust.</p>
+                </div>
+                <div class="value-item">
+                    <h3>Quality</h3>
+                    <p>We never compromise on quality. Every product we sell meets our rigorous standards for performance, durability, and safety.</p>
+                </div>
+                <div class="value-item">
+                    <h3>Customer Service</h3>
+                    <p>Your satisfaction is our top priority. We go above and beyond to ensure every customer has a positive experience with HARD STOCK.</p>
+                </div>
+                <div class="value-item">
+                    <h3>Innovation</h3>
+                    <p>We stay current with the latest tools and technologies, bringing you cutting-edge solutions that make your work easier and more efficient.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
     <!-- Footer -->
     <footer class="footer">
         <div class="footer-content">
@@ -295,8 +191,8 @@
             <div class="footer-section">
                 <h3>Quick Links</h3>
                 <ul class="footer-links">
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">About</a></li>
+                    <li><a href="{{ url('/') }}">Home</a></li>
+                    <li><a href="{{ url('/about') }}">About</a></li>
                     <li><a href="#">Products</a></li>
                     <li><a href="#">New Arrival</a></li>
                     <li><a href="#">Categories</a></li>
