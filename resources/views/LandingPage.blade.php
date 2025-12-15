@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HARD STOCK - Quality Tools at Affordable Prices</title>
+    <title>HARD STOCK</title>
     <link rel="icon" type="image/svg+xml" href="{{ asset('image/logo.png') }}">
     <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('image/logo.png') }}">
     <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('image/logo.png') }}">
@@ -12,7 +12,7 @@
     <link href="{{ asset('css/landing-page.css') }}" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
-<body>
+<body class="landing-page">
     <!-- Navigation Bar -->
     <nav class="navbar">
         <div class="nav-container">
@@ -21,10 +21,12 @@
                 <div class="brand">HARD STOCK</div>
             </div>
             <div class="nav-right">
-                <a href="#" class="nav-link">Home</a>
-                <a href="#" class="nav-link">Products</a>
-                <a href="#" class="nav-link">About</a>
-                <a href="#" class="nav-link">Contact</a>
+                <ul class="nav-links">
+                    <li><a href="#" class="nav-link">Home</a></li>
+                    <li><a href="#" class="nav-link">Products</a></li>
+                    <li><a href="#" class="nav-link">About</a></li>
+                    <li><a href="#" class="nav-link">Contact</a></li>
+                </ul>
                 <a href="#" class="login-btn">Login</a>
             </div>
         </div>
