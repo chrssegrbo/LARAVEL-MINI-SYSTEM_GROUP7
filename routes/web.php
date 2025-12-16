@@ -17,3 +17,11 @@ Route::get('/about', function () {
 Route::get('/contact', function () {
     return view('ContactPage');
 });
+
+Route::get('/register', function () {
+    return view('Register');
+});
+
+Route::get('/login', function () {
+    return view('Login');
+});
