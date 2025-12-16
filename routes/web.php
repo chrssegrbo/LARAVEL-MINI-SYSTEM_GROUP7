@@ -25,3 +25,7 @@ Route::get('/register', function () {
 Route::get('/login', function () {
     return view('Login');
 });
+
+Route::get('/products', function () {
+    return view('ProductPage');
+});

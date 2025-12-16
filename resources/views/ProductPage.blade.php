@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products</title>
+    <link rel="icon" type="image/svg+xml" href="{{ asset('image/logo.png') }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('image/logo.png') }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('image/logo.png') }}">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('image/logo.png') }}">
+    <link rel="icon" type="icon/x-icon" href="{{ asset('image/logo.png') }}">
+    <link href="{{ asset('css/product-page.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/landing-page.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/contact-page.css') }}" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Simple Navbar -->
+    <nav class="simple-navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="{{ asset('image/logo.png') }}" alt="HARD STOCK" class="logo-img">
+                <span class="logo-text">HARD STOCK</span>
+            </div>
+            <div class="nav-signup">
+                <a href="/register" class="signup-link">Sign Up</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="products-hero">
+        <div class="hero-content">
+            <h1>Professional Hardware Tools</h1>
+            <p>Quality equipment from trusted brands</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <div class="products-container">
+        <!-- Sidebar Filters -->
+        <aside class="filters-sidebar">
+            <div class="filter-section">
+                <h3>Categories</h3>
+                <ul class="filter-list">
+                    <li><label><input type="checkbox" name="category" value="power-tools"> Power Tools</label></li>
+                    <li><label><input type="checkbox" name="category" value="hand-tools"> Hand Tools</label></li>
+                    <li><label><input type="checkbox" name="category" value="measuring"> Measuring Tools</label></li>
+                    <li><label><input type="checkbox" name="category" value="safety"> Safety Equipment</label></li>
+                    <li><label><input type="checkbox" name="category" value="storage"> Storage Solutions</label></li>
+                </ul>
+            </div>
+
+            <div class="filter-section">
+                <h3>Trusted Brands</h3>
+                <ul class="filter-list">
+                    <li><label><input type="checkbox" name="brand" value="snapon"> Snap-on</label></li>
+                    <li><label><input type="checkbox" name="brand" value="stanley"> Stanley</label></li>
+                    <li><label><input type="checkbox" name="brand" value="bosch"> Bosch</label></li>
+                    <li><label><input type="checkbox" name="brand" value="milwaukee"> Milwaukee</label></li>
+                    <li><label><input type="checkbox" name="brand" value="craftsman"> Craftsman</label></li>
+                    <li><label><input type="checkbox" name="brand" value="dewalt"> DeWalt</label></li>
+                    <li><label><input type="checkbox" name="brand" value="makita"> Makita</label></li>
+                </ul>
+            </div>
+
+            <div class="filter-section">
+                <h3>Price Range</h3>
+                <div class="price-range">
+                    <input type="range" min="0" max="10000" value="5000" class="price-slider">
+                    <div class="price-inputs">
+                        <input type="number" placeholder="Min" value="0">
+                        <input type="number" placeholder="Max" value="10000">
+                    </div>
+                </div>
+            </div>
+
+            <div class="filter-section">
+                <h3>Rating</h3>
+                <ul class="filter-list">
+                    <li><label><input type="radio" name="rating" value="4"> 4 Stars & Up</label></li>
+                    <li><label><input type="radio" name="rating" value="3"> 3 Stars & Up</label></li>
+                    <li><label><input type="radio" name="rating" value="2"> 2 Stars & Up</label></li>
+                    <li><label><input type="radio" name="rating" value="1"> 1 Star & Up</label></li>
+                </ul>
+            </div>
+
+            <button class="clear-filters">Clear All Filters</button>
+        </aside>
+
+        <!-- Products Grid -->
+        <main class="products-main">
+            <!-- Search and Sort Bar -->
+            <div class="search-sort-bar">
+                <div class="search-box">
+                    <input type="text" placeholder="Search products...">
+                    <button class="search-btn">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <path d="m21 21-4.35-4.35"></path>
+                        </svg>
+                    </button>
+                </div>
+                <div class="sort-options">
+                    <select class="sort-select">
+                        <option value="featured">Featured</option>
+                        <option value="price-low">Price: Low to High</option>
+                        <option value="price-high">Price: High to Low</option>
+                        <option value="name">Name: A to Z</option>
+                        <option value="rating">Highest Rated</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Results Count -->
+            <div class="results-info">
+                <p>Showing <span class="results-count">24</span> products</p>
+            </div>
+
+            <!-- Products Grid -->
+            <div class="products-grid">
+                <!-- Product Card 1 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="{{ asset('image/tool1.png') }}" alt="Professional Drill">
+                        <div class="product-badge">New</div>
+                        <button class="quick-view">Quick View</button>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-brand">Bosch</div>
+                        <h3 class="product-name">Professional Cordless Drill</h3>
+                        <div class="product-rating">
+                            <div class="stars">★★★★☆</div>
+                            <span class="rating-count">(124)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">$299.99</span>
+                            <span class="original-price">$399.99</span>
+                        </div>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+
+                <!-- Product Card 2 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="{{ asset('image/tool2.png') }}" alt="Impact Wrench">
+                        <div class="product-badge sale">Sale</div>
+                        <button class="quick-view">Quick View</button>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-brand">Milwaukee</div>
+                        <h3 class="product-name">Heavy Duty Impact Wrench</h3>
+                        <div class="product-rating">
+                            <div class="stars">★★★★★</div>
+                            <span class="rating-count">(89)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">$449.99</span>
+                            <span class="original-price">$549.99</span>
+                        </div>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+
+                <!-- Product Card 3 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="{{ asset('image/tool3.png') }}" alt="Socket Set">
+                        <button class="quick-view">Quick View</button>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-brand">Snap-on</div>
+                        <h3 class="product-name">Professional Socket Set</h3>
+                        <div class="product-rating">
+                            <div class="stars">★★★★★</div>
+                            <span class="rating-count">(156)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">$189.99</span>
+                        </div>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+
+                <!-- Product Card 4 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="{{ asset('image/tool4.png') }}" alt="Circular Saw">
+                        <div class="product-badge">Hot</div>
+                        <button class="quick-view">Quick View</button>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-brand">DeWalt</div>
+                        <h3 class="product-name">Circular Saw 7-1/4"</h3>
+                        <div class="product-rating">
+                            <div class="stars">★★★★☆</div>
+                            <span class="rating-count">(98)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">$279.99</span>
+                            <span class="original-price">$329.99</span>
+                        </div>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+
+                <!-- Product Card 5 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="{{ asset('image/tool5.png') }}" alt="Tool Box">
+                        <button class="quick-view">Quick View</button>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-brand">Stanley</div>
+                        <h3 class="product-name">Rolling Tool Chest</h3>
+                        <div class="product-rating">
+                            <div class="stars">★★★★☆</div>
+                            <span class="rating-count">(67)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">$349.99</span>
+                        </div>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+
+                <!-- Product Card 6 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="{{ asset('image/tool6.png') }}" alt="Hammer">
+                        <button class="quick-view">Quick View</button>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-brand">Craftsman</div>
+                        <h3 class="product-name">Professional Hammer Set</h3>
+                        <div class="product-rating">
+                            <div class="stars">★★★★★</div>
+                            <span class="rating-count">(203)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">$79.99</span>
+                        </div>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+
+                <!-- Product Card 7 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="{{ asset('image/tool7.png') }}" alt="Screwdriver Set">
+                        <div class="product-badge">New</div>
+                        <button class="quick-view">Quick View</button>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-brand">Makita</div>
+                        <h3 class="product-name">Precision Screwdriver Set</h3>
+                        <div class="product-rating">
+                            <div class="stars">★★★★☆</div>
+                            <span class="rating-count">(45)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">$49.99</span>
+                        </div>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+
+                <!-- Product Card 8 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="{{ asset('image/tool8.png') }}" alt="Work Gloves">
+                        <button class="quick-view">Quick View</button>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-brand">Stanley</div>
+                        <h3 class="product-name">Heavy Duty Work Gloves</h3>
+                        <div class="product-rating">
+                            <div class="stars">★★★★☆</div>
+                            <span class="rating-count">(112)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">$24.99</span>
+                        </div>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pagination -->
+            <div class="pagination">
+                <button class="page-btn prev" disabled>Previous</button>
+                <button class="page-btn active">1</button>
+                <button class="page-btn">2</button>
+                <button class="page-btn">3</button>
+                <button class="page-btn">...</button>
+                <button class="page-btn">8</button>
+                <button class="page-btn next">Next</button>
+            </div>
+        </main>
+    </div>
+
+    <!-- Footer from Home Page -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <div class="footer-logo">
+                    <img src="{{ asset('image/logo.png') }}" alt="HARD STOCK Logo">
+                    <div class="brand">HARD STOCK</div>
+                </div>
+                <p class="footer-description">
+                    Your trusted partner for professional hardware tools and equipment. Quality products, competitive prices, and exceptional service.
+                </p>
+                <div class="social-links">
+                    <a href="#" class="social-link">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
+                            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                        </svg>
+                    </a>
+                    <a href="#" class="social-link">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
+                            <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+                        </svg>
+                    </a>
+                    <a href="#" class="social-link">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
+                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zM5.838 12a6.162 6.162 0 1112.324 0 6.162 6.162 0 01-12.324 0zM12 16a4 4 0 110-8 4 4 0 010 8zm4.965-10.405a1.44 1.44 0 112.881.001 1.44 1.44 0 01-2.881-.001z"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Products</a></li>
+                    <li><a href="#">New Arrival</a></li>
+                    <li><a href="#">Categories</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>Customer Service</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Shipping Info</a></li>
+                    <li><a href="#">Returns & Exchanges</a></li>
+                    <li><a href="#">Order Tracking</a></li>
+                    <li><a href="#">FAQ</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>Contact Info</h3>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="white">
+                            <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                        </svg>
+                        <span>Unit 3, Purok Sampaguita,<br> 
+                            Sabang, Danao City, Cebu 6004</span>
+                    </div>
+                    <div class="contact-item">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="white">
+                            <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+                        </svg>
+                        <span>(032) 345-6789</span>
+                    </div>
+                    <div class="contact-item">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="white">
+                            <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                        </svg>
+                        <span>support@hardstock.com</span>
+                    </div>
+                </div>
+                <div class="newsletter">
+                    <h4>Newsletter Signup</h4>
+                    <div class="newsletter-form">
+                        <input type="email" placeholder="Enter your email">
+                        <button type="submit">Subscribe</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="footer-bottom-content">
+                <div class="copyright">
+                    <p>&copy; 2025 HARD STOCK. All rights reserved.</p>
+                </div>
+                <div class="footer-bottom-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Cookie Policy</a>
+                    <a href="#">Sitemap</a>
+                </div>
+                <div class="payment-methods">
+                    <span>We Accept:</span>
+                    <div class="payment-icons">
+                        <img src="{{ asset('image/gcash.png') }}" alt="GCash" class="payment-img">
+                        <img src="{{ asset('image/maya.png') }}" alt="Maya" class="payment-img">
+                        <img src="{{ asset('image/visa.png') }}" alt="Visa" class="payment-img">
+                        <img src="{{ asset('image/bpi.png') }}" alt="BPI" class="payment-img">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Filter functionality
+        document.querySelectorAll('.filter-list input').forEach(input => {
+            input.addEventListener('change', function() {
+                filterProducts();
+            });
+        });
+
+        // Price range slider
+        const priceSlider = document.querySelector('.price-slider');
+        const priceInputs = document.querySelectorAll('.price-inputs input');
+        
+        priceSlider.addEventListener('input', function() {
+            const value = this.value;
+            priceInputs[1].value = value;
+            filterProducts();
+        });
+
+        priceInputs.forEach(input => {
+            input.addEventListener('change', function() {
+                filterProducts();
+            });
+        });
+
+        // Clear filters
+        document.querySelector('.clear-filters').addEventListener('click', function() {
+            document.querySelectorAll('.filter-list input').forEach(input => {
+                input.checked = false;
+            });
+            document.querySelectorAll('.price-inputs input').forEach(input => {
+                input.value = input.placeholder === 'Min' ? '0' : '10000';
+            });
+            priceSlider.value = 5000;
+            filterProducts();
+        });
+
+        // Quick view functionality
+        document.querySelectorAll('.quick-view').forEach(button => {
+            button.addEventListener('click', function(e) {
+                e.preventDefault();
+                const productCard = this.closest('.product-card');
+                const productName = productCard.querySelector('.product-name').textContent;
+                alert(`Quick view: ${productName}`);
+            });
+        });
+
+        // Add to cart functionality
+        document.querySelectorAll('.add-to-cart').forEach(button => {
+            button.addEventListener('click', function(e) {
+                e.preventDefault();
+                const productCard = this.closest('.product-card');
+                const productName = productCard.querySelector('.product-name').textContent;
+                this.textContent = 'Added!';
+                this.style.background = '#10b981';
+                setTimeout(() => {
+                    this.textContent = 'Add to Cart';
+                    this.style.background = '';
+                }, 2000);
+            });
+        });
+
+        // Search functionality
+        const searchInput = document.querySelector('.search-box input');
+        const searchBtn = document.querySelector('.search-btn');
+        
+        searchBtn.addEventListener('click', function() {
+            filterProducts();
+        });
+
+        searchInput.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                filterProducts();
+            }
+        });
+
+        // Sort functionality
+        document.querySelector('.sort-select').addEventListener('change', function() {
+            filterProducts();
+        });
+
+        // Filter products function
+        function filterProducts() {
+            // In a real application, this would filter the products
+            console.log('Filtering products...');
+            const resultsCount = document.querySelector('.results-count');
+            const randomCount = Math.floor(Math.random() * 20) + 10;
+            resultsCount.textContent = randomCount;
+        }
+
+        // Pagination
+        document.querySelectorAll('.page-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                if (!this.disabled) {
+                    document.querySelectorAll('.page-btn').forEach(btn => btn.classList.remove('active'));
+                    this.classList.add('active');
+                    // In a real application, this would load the next page
+                    filterProducts();
+                }
+            });
+        });
+    </script>
+</body>
+</html>
