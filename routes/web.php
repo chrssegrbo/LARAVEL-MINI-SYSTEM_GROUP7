@@ -14,3 +14,6 @@ Route::get('/about', function () {
     return view('AboutPage');
 });
 
+Route::get('/contact', function () {
+    return view('ContactPage');
+});

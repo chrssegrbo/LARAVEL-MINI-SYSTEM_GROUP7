@@ -484,7 +484,7 @@ letter-spacing: 1px;
     background: #1a1a1a;
     color: white;
     padding: 60px 0 0;
-    margin-top: 80px;
+    margin-top: 0;
 }
 
 .footer-content {
@@ -759,7 +759,11 @@ letter-spacing: 1px;
 
 .section-header {
     text-align: center;
-    margin-bottom: 50px;
+    margin-bottom: 60px;
+}
+
+.section-subtitle {
+    margin-top: 15px;
 }
 
 .sponsors-grid {
