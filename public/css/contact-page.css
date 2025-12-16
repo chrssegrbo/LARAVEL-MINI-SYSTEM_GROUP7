@@ -2,11 +2,33 @@
 
 /* Hero Section */
 .contact-hero {
-    background: linear-gradient(135deg, #dc2626, #b91c1c);
+    background: url('../image/contractor.jpg') center/cover no-repeat;
+    background-color: rgba(0, 0, 0, 0.7);
+    background-blend-mode: overlay;
     color: white;
-    padding: 80px 20px 60px;
+    padding: 60px 20px;
     text-align: center;
     position: relative;
+    min-height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contact-hero .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-content {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .contact-hero h1 {
@@ -56,11 +78,34 @@
 .contact-left {
     flex: 1;
     min-width: 0;
+    margin-top: 2rem;
+}
+
+.contact-left h2 {
+    color: #dc2626;
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    font-weight: 600;
+    text-align: center;
+    position: relative;
+    text-transform: uppercase;
+}
+
+.contact-left h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: #dc2626;
 }
 
 .contact-right {
     flex: 1;
     min-width: 0;
+    margin-top: 4rem;
 }
 
 /* Contact Info Section */
@@ -75,7 +120,7 @@
 .contact-info-section h2 {
     color: #dc2626;
     font-size: 1.5rem;
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
     font-weight: 600;
 }
 
@@ -173,10 +218,11 @@
 }
 
 .contact-form-section h2 {
-    color: #dc2626;
+    color: #dc2626 !important;
     font-size: 1.5rem;
     margin-bottom: 1rem;
     font-weight: 600;
+    text-align: center;
 }
 
 .contact-form-section p {
@@ -184,6 +230,7 @@
     font-size: 0.875rem;
     margin-bottom: 1.5rem;
     line-height: 1.5;
+    text-align: center;
 }
 
 /* Contact Form Container */
@@ -264,6 +311,7 @@
     transition: all 0.2s ease;
     text-transform: uppercase;
     letter-spacing: 0.5px;
+    width: 100%;
 }
 
 .submit-btn:hover {
@@ -316,7 +364,9 @@
 
 /* FAQ Section */
 .faq-section {
-    margin-bottom: 60px;
+    margin-top: 6rem;
+    background: #f8f9fa;
+    padding: 60px 20px;
 }
 
 .faq-container {
@@ -328,9 +378,22 @@
 .faq-section h2 {
     font-size: 32px;
     font-weight: 700;
-    color: #333;
+    color: #dc2626;
     text-align: center;
     margin-bottom: 40px;
+    position: relative;
+    text-transform: uppercase;
+}
+
+.faq-section h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: #dc2626;
 }
 
 .faq-item {
@@ -375,11 +438,11 @@
 }
 
 .faq-answer {
-    padding: 0 25px;
+    padding: 0 20px;
     max-height: 0;
     overflow: hidden;
-    transition: all 0.2s ease;
-    color: #666;
+    transition: max-height 0.3s ease, padding 0.3s ease;
+    margin-top: 10px;
     line-height: 1.5;
     font-size: 15px;
 }
@@ -404,35 +467,28 @@
 
 .social-links {
     display: flex;
-    justify-content: center;
     gap: 15px;
 }
 
 .social-link {
-    width: 44px;
-    height: 44px;
-    background: #f3f4f6;
+    width: 40px;
+    height: 40px;
+    background: #333;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: all 0.2s ease;
-    text-decoration: none;
+    transition: all 0.3s ease;
 }
 
 .social-link:hover {
     background: #dc2626;
-    transform: translateY(-2px);
+    transform: translateY(-3px);
 }
 
 .social-link svg {
     width: 20px;
     height: 20px;
-    fill: #374151;
-    transition: fill 0.2s ease;
-}
-
-.social-link:hover svg {
     fill: white;
 }
 

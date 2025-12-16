@@ -4,6 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us</title>
+    <link rel="icon" type="image/svg+xml" href="{{ asset('image/logo.png') }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('image/logo.png') }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('image/logo.png') }}">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('image/logo.png') }}">
+    <link rel="icon" type="image/x-icon" href="{{ asset('image/logo.png') }}">
     <link rel="stylesheet" href="{{ asset('css/landing-page.css') }}">
     <link rel="stylesheet" href="{{ asset('css/home-page.css') }}">
     <link rel="stylesheet" href="{{ asset('css/contact-page.css') }}">
@@ -46,53 +51,49 @@
             </div>
         </div>
     </nav>
-
     <!-- Contact Hero Section -->
     <section class="contact-hero">
         <div class="container">
-            <h1>Contact Us</h1>
-            <p>We're here to help you with all your hardware needs. Get in touch with our team for expert advice and support.</p>
+            <div class="hero-content">
+                <div>
+                    <h1>Contact Us</h1>
+                    <p>We're here to help you with all your hardware needs. Get in touch with our team for expert advice and support.</p>
+                </div>
+            </div>
         </div>
     </section>
-
     <!-- Contact Container -->
     <div class="contact-main">
         <div class="contact-grid">
             <!-- Left Column -->
             <div class="contact-left">
-                <!-- Get in Touch Section -->
-                <div class="contact-info-section">
-                    <h2>Get in Touch</h2>
-                    
-                    <div class="contact-info-item">
-                        <div class="contact-icon">
-                            <svg viewBox="0 0 24 24" fill="#dc2626">
-                                <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
-                            </svg>
-                        </div>
-                        <div class="contact-info-content">
-                            <h3>Phone Number</h3>
-                            <p>Main: <a href="tel:(032)345-6789">(032) 345-6789</a><br>
-                            Mobile: <a href="tel:+639175678901">+63 917 567 8901</a></p>
-                        </div>
+                <!-- Get in Touch Section - No Container -->
+                <h2>Get in Touch</h2>
+                
+                <div class="contact-info-item">
+                    <div class="contact-icon">
+                        <svg viewBox="0 0 24 24" fill="#dc2626">
+                            <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+                        </svg>
                     </div>
-                    
-                    <div class="contact-info-item">
-                        <div class="contact-icon">
-                            <svg viewBox="0 0 24 24" fill="#dc2626">
-                                <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
-                            </svg>
-                        </div>
-                        <div class="contact-info-content">
-                            <h3>Email Address</h3>
-                            <p>Support: <a href="mailto:support@hardstock.com">support@hardstock.com</a></p>
-                        </div>
-                    </div>
-
-                                        
+                    <div class="contact-info-content">
+                        <h3>Phone Number</h3>
+                        <p>Main: <a href="tel:(032)345-6789">(032) 345-6789</a><br>
+                        Mobile: <a href="tel:+639175678901">+63 917 567 8901</a></p>
                     </div>
                 </div>
-
+                
+                <div class="contact-info-item">
+                    <div class="contact-icon">
+                        <svg viewBox="0 0 24 24" fill="#dc2626">
+                            <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                        </svg>
+                    </div>
+                    <div class="contact-info-content">
+                        <h3>Email Address</h3>
+                        <p>Support: <a href="mailto:support@hardstock.com">support@hardstock.com</a></p>
+                    </div>
+                </div>
                 <!-- Map -->
                 <div class="map-container">
                     <iframe 
@@ -105,7 +106,6 @@
                     </iframe>
                 </div>
             </div>
-
             <!-- Right Column -->
             <div class="contact-right">
                 <!-- Contact Form Section -->
@@ -116,27 +116,17 @@
                     <form class="contact-form">
                         <div class="form-row">
                             <div class="form-group">
-                                <label for="first-name">First Name *</label>
+                                <label for="first-name">First Name</label>
                                 <input type="text" id="first-name" name="first-name" required>
                             </div>
                             <div class="form-group">
-                                <label for="last-name">Last Name *</label>
+                                <label for="last-name">Last Name</label>
                                 <input type="text" id="last-name" name="last-name" required>
                             </div>
                         </div>
                         
                         <div class="form-group">
-                            <label for="email">Email Address *</label>
-                            <input type="email" id="email" name="email" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="phone">Phone Number</label>
-                            <input type="tel" id="phone" name="phone" placeholder="+63 (XXX) XXX-XXXX">
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="subject">Subject *</label>
+                            <label for="subject">Subject</label>
                             <select id="subject" name="subject" required>
                                 <option value="">Select a subject</option>
                                 <option value="general">General Inquiry</option>
@@ -150,7 +140,7 @@
                         </div>
                         
                         <div class="form-group">
-                            <label for="message">Message *</label>
+                            <label for="message">Message</label>
                             <textarea id="message" name="message" required placeholder="Tell us more about your inquiry..."></textarea>
                         </div>
                         
@@ -160,7 +150,6 @@
             </div>
         </div>
     </div>
-
     <!-- FAQ Section -->
     <section class="faq-section">
         <div class="faq-container">
@@ -176,14 +165,14 @@
             <div class="faq-item">
                 <div class="faq-question">Do you offer delivery services?</div>
                 <div class="faq-answer">
-                    <p>Yes, we offer delivery services within Cebu City and surrounding areas. Delivery fees may apply depending on your location and order size. Please contact us for more details.</p>
+                    <p>Yes, we offer delivery services nationwide. Delivery fees may apply depending on your location and order size. Please contact us for more details.</p>
                 </div>
             </div>
             
             <div class="faq-item">
                 <div class="faq-question">What payment methods do you accept?</div>
                 <div class="faq-answer">
-                    <p>We accept cash, credit/debit cards (Visa, Mastercard), GCash, Maya, and bank transfers. We also offer installment plans for qualified purchases.</p>
+                    <p>We accept cash, credit/debit cards (Visa, Mastercard), GCash, Maya, and BPI. </p>
                 </div>
             </div>
             
@@ -202,7 +191,7 @@
             </div>
         </div>
     </section>
-
+    
     <!-- Footer -->
     <footer class="footer">
         <div class="footer-content">
@@ -228,90 +217,85 @@
                     <a href="#" class="social-link">
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
                             <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zM5.838 12a6.162 6.162 0 1112.324 0 6.162 6.162 0 01-12.324 0zM12 16a4 4 0 110-8 4 4 0 010 8zm4.965-10.405a1.44 1.44 0 112.881.001 1.44 1.44 0 01-2.881-.001z"/>
-                    </svg>
-                </a>
-            </div>
-        </div>
-
-        <div class="footer-section">
-            <h3>Quick Links</h3>
-            <ul class="footer-links">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Products</a></li>
-                <li><a href="#">Contact</a></li>
-                <li><a href="#">FAQ</a></li>
-            </ul>
-        </div>
-
-        <div class="footer-section">
-            <h3>Customer Service</h3>
-            <ul class="footer-links">
-                <li><a href="#">Contact Us</a></li>
-                <li><a href="#">Shipping Info</a></li>
-                <li><a href="#">Returns & Exchanges</a></li>
-                <li><a href="#">Order Tracking</a></li>
-                <li><a href="#">Privacy Policy</a></li>
-            </ul>
-        </div>
-
-        <div class="footer-section">
-            <h3>Contact Info</h3>
-            <div class="contact-info">
-                <div class="contact-item">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="white">
-                        <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
-                    </svg>
-                    <span>Unit 3, Purok Sampaguita,<br> 
-                        Sabang, Danao City, Cebu 6004</span>
-                </div>
-                <div class="contact-item">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="white">
-                        <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
-                    </svg>
-                    <span>(032) 345-6789</span>
-                </div>
-                <div class="contact-item">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="white">
-                        <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
-                    </svg>
-                    <span>support@hardstock.com</span>
+                        </svg>
+                    </a>
                 </div>
             </div>
-            <div class="newsletter">
-                <h4>Newsletter Signup</h4>
-                <div class="newsletter-form">
-                    <input type="email" placeholder="Enter your email">
-                    <button type="submit">Subscribe</button>
+            <div class="footer-section">
+                <h3>QUICK LINKS</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Products</a></li>
+                    <li><a href="#">New Arrival</a></li>
+                    <li><a href="#">Categories</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>CUSTOMER SERVICE</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Shipping Info</a></li>
+                    <li><a href="#">Returns & Exchanges</a></li>
+                    <li><a href="#">Order Tracking</a></li>
+                    <li><a href="#">FAQ</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>CONTACT INFO</h3>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="white">
+                            <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                        </svg>
+                        <span>Unit 3, Purok Sampaguita,<br> 
+                            Sabang, Danao City, Cebu 6004</span>
+                    </div>
+                    <div class="contact-item">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="white">
+                            <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+                        </svg>
+                        <span>(032) 345-6789</span>
+                    </div>
+                    <div class="contact-item">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="white">
+                            <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                        </svg>
+                        <span>support@hardstock.com</span>
+                    </div>
+                </div>
+                <div class="newsletter">
+                    <h4>NEWSLETTER SIGNUP</h4>
+                    <div class="newsletter-form">
+                        <input type="email" placeholder="Enter your email">
+                        <button type="submit">Subscribe</button>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-
-    <div class="footer-bottom">
-        <div class="footer-bottom-content">
-            <div class="copyright">
-                <p>&copy; 2025 HARD STOCK. All rights reserved.</p>
-            </div>
-            <div class="footer-bottom-links">
-                <a href="#">Privacy Policy</a>
-                <a href="#">Terms of Service</a>
-                <a href="#">Cookie Policy</a>
-                <a href="#">Sitemap</a>
-            </div>
-            <div class="payment-methods">
-                <span>We Accept:</span>
-                <div class="payment-icons">
-                    <img src="{{ asset('image/gcash.png') }}" alt="GCash" class="payment-img">
-                    <img src="{{ asset('image/maya.png') }}" alt="Maya" class="payment-img">
-                    <img src="{{ asset('image/visa.png') }}" alt="Visa" class="payment-img">
-                    <img src="{{ asset('image/bpi.png') }}" alt="BPI" class="payment-img">
+        <div class="footer-bottom">
+            <div class="footer-bottom-content">
+                <div class="copyright">
+                    <p>&copy; 2025 HARD STOCK. All rights reserved.</p>
+                </div>
+                <div class="footer-bottom-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Cookie Policy</a>
+                    <a href="#">Sitemap</a>
+                </div>
+                <div class="payment-methods">
+                    <span>We Accept:</span>
+                    <div class="payment-icons">
+                        <img src="{{ asset('image/gcash.png') }}" alt="GCash" class="payment-img">
+                        <img src="{{ asset('image/maya.png') }}" alt="Maya" class="payment-img">
+                        <img src="{{ asset('image/visa.png') }}" alt="Visa" class="payment-img">
+                        <img src="{{ asset('image/bpi.png') }}" alt="BPI" class="payment-img">
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</footer>
-
+    </footer>
     <script>
         // FAQ Accordion
         document.addEventListener('DOMContentLoaded', function() {
@@ -332,7 +316,6 @@
                     item.classList.toggle('active');
                 });
             });
-
             // Contact Form Validation
             const contactForm = document.querySelector('.contact-form');
             if (contactForm) {
