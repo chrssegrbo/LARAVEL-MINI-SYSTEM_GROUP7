@@ -11,30 +11,47 @@
     <link rel="icon" type="icon/x-icon" href="{{ asset('image/logo.png') }}">
     <link href="{{ asset('css/product-page.css') }}" rel="stylesheet">
     <link href="{{ asset('css/landing-page.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/contact-page.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/home-page.css') }}" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Simple Navbar -->
-    <nav class="simple-navbar">
+    <!-- Navigation Bar -->
+    <nav class="navbar">
         <div class="nav-container">
-            <div class="nav-logo">
-                <img src="{{ asset('image/logo.png') }}" alt="HARD STOCK" class="logo-img">
-                <span class="logo-text">HARD STOCK</span>
+            <div class="nav-left">
+                <img src="{{ asset('image/logo.png') }}" alt="HARD STOCK Logo" class="nav-logo">
+                <div class="brand">HARD STOCK</div>
             </div>
-            <div class="nav-signup">
-                <a href="/register" class="signup-link">Sign Up</a>
+            <div class="nav-right">
+                <ul class="nav-links">
+                    <li><a href="#" class="nav-link">Home</a></li>
+                    <li><a href="#" class="nav-link">Products</a></li>
+                    <li><a href="#" class="nav-link">About</a></li>
+                    <li><a href="#" class="nav-link">Contact</a></li>
+                </ul>
+                <div class="search-bar">
+                    <input type="text" placeholder="Search products..." class="search-input">
+                    <button type="button" class="search-btn">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="white">
+                            <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+                        </svg>
+                    </button>
+                </div>
+                <div class="nav-icons">
+                    <a href="#" class="cart-icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
+                            <path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49c.08-.14.12-.31.12-.48 0-.55-.45-1-1-1H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z"/>
+                        </svg>
+                    </a>
+                    <a href="#" class="profile-icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
+                            <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+                        </svg>
+                    </a>
+                </div>
             </div>
         </div>
     </nav>
-
-    <!-- Hero Section -->
-    <section class="products-hero">
-        <div class="hero-content">
-            <h1>Professional Hardware Tools</h1>
-            <p>Quality equipment from trusted brands</p>
-        </div>
-    </section>
 
     <!-- Main Content -->
     <div class="products-container">
@@ -59,29 +76,6 @@
                     <li><label><input type="checkbox" name="brand" value="bosch"> Bosch</label></li>
                     <li><label><input type="checkbox" name="brand" value="milwaukee"> Milwaukee</label></li>
                     <li><label><input type="checkbox" name="brand" value="craftsman"> Craftsman</label></li>
-                    <li><label><input type="checkbox" name="brand" value="dewalt"> DeWalt</label></li>
-                    <li><label><input type="checkbox" name="brand" value="makita"> Makita</label></li>
-                </ul>
-            </div>
-
-            <div class="filter-section">
-                <h3>Price Range</h3>
-                <div class="price-range">
-                    <input type="range" min="0" max="10000" value="5000" class="price-slider">
-                    <div class="price-inputs">
-                        <input type="number" placeholder="Min" value="0">
-                        <input type="number" placeholder="Max" value="10000">
-                    </div>
-                </div>
-            </div>
-
-            <div class="filter-section">
-                <h3>Rating</h3>
-                <ul class="filter-list">
-                    <li><label><input type="radio" name="rating" value="4"> 4 Stars & Up</label></li>
-                    <li><label><input type="radio" name="rating" value="3"> 3 Stars & Up</label></li>
-                    <li><label><input type="radio" name="rating" value="2"> 2 Stars & Up</label></li>
-                    <li><label><input type="radio" name="rating" value="1"> 1 Star & Up</label></li>
                 </ul>
             </div>
 
@@ -90,34 +84,7 @@
 
         <!-- Products Grid -->
         <main class="products-main">
-            <!-- Search and Sort Bar -->
-            <div class="search-sort-bar">
-                <div class="search-box">
-                    <input type="text" placeholder="Search products...">
-                    <button class="search-btn">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <circle cx="11" cy="11" r="8"></circle>
-                            <path d="m21 21-4.35-4.35"></path>
-                        </svg>
-                    </button>
-                </div>
-                <div class="sort-options">
-                    <select class="sort-select">
-                        <option value="featured">Featured</option>
-                        <option value="price-low">Price: Low to High</option>
-                        <option value="price-high">Price: High to Low</option>
-                        <option value="name">Name: A to Z</option>
-                        <option value="rating">Highest Rated</option>
-                    </select>
-                </div>
-            </div>
-
-            <!-- Results Count -->
-            <div class="results-info">
-                <p>Showing <span class="results-count">24</span> products</p>
-            </div>
-
-            <!-- Products Grid -->
+            
             <div class="products-grid">
                 <!-- Product Card 1 -->
                 <div class="product-card">
@@ -127,7 +94,7 @@
                         <button class="quick-view">Quick View</button>
                     </div>
                     <div class="product-info">
-                        <div class="product-brand">Bosch</div>
+                        <img src="{{ asset('image/bosch.png') }}" alt="Bosch" class="product-brand">
                         <h3 class="product-name">Professional Cordless Drill</h3>
                         <div class="product-rating">
                             <div class="stars">★★★★☆</div>
@@ -149,7 +116,7 @@
                         <button class="quick-view">Quick View</button>
                     </div>
                     <div class="product-info">
-                        <div class="product-brand">Milwaukee</div>
+                        <img src="{{ asset('image/brands/milwaukee-logo.png') }}" alt="Milwaukee" class="product-brand">
                         <h3 class="product-name">Heavy Duty Impact Wrench</h3>
                         <div class="product-rating">
                             <div class="stars">★★★★★</div>
@@ -170,7 +137,7 @@
                         <button class="quick-view">Quick View</button>
                     </div>
                     <div class="product-info">
-                        <div class="product-brand">Snap-on</div>
+                        <img src="{{ asset('image/brands/snapon-logo.png') }}" alt="Snap-on" class="product-brand">
                         <h3 class="product-name">Professional Socket Set</h3>
                         <div class="product-rating">
                             <div class="stars">★★★★★</div>
@@ -186,33 +153,11 @@
                 <!-- Product Card 4 -->
                 <div class="product-card">
                     <div class="product-image">
-                        <img src="{{ asset('image/tool4.png') }}" alt="Circular Saw">
-                        <div class="product-badge">Hot</div>
-                        <button class="quick-view">Quick View</button>
-                    </div>
-                    <div class="product-info">
-                        <div class="product-brand">DeWalt</div>
-                        <h3 class="product-name">Circular Saw 7-1/4"</h3>
-                        <div class="product-rating">
-                            <div class="stars">★★★★☆</div>
-                            <span class="rating-count">(98)</span>
-                        </div>
-                        <div class="product-price">
-                            <span class="current-price">$279.99</span>
-                            <span class="original-price">$329.99</span>
-                        </div>
-                        <button class="add-to-cart">Add to Cart</button>
-                    </div>
-                </div>
-
-                <!-- Product Card 5 -->
-                <div class="product-card">
-                    <div class="product-image">
                         <img src="{{ asset('image/tool5.png') }}" alt="Tool Box">
                         <button class="quick-view">Quick View</button>
                     </div>
                     <div class="product-info">
-                        <div class="product-brand">Stanley</div>
+                        <img src="{{ asset('image/brands/stanley-logo.png') }}" alt="Stanley" class="product-brand">
                         <h3 class="product-name">Rolling Tool Chest</h3>
                         <div class="product-rating">
                             <div class="stars">★★★★☆</div>
@@ -225,14 +170,14 @@
                     </div>
                 </div>
 
-                <!-- Product Card 6 -->
+                <!-- Product Card 5 -->
                 <div class="product-card">
                     <div class="product-image">
                         <img src="{{ asset('image/tool6.png') }}" alt="Hammer">
                         <button class="quick-view">Quick View</button>
                     </div>
                     <div class="product-info">
-                        <div class="product-brand">Craftsman</div>
+                        <img src="{{ asset('image/brands/craftsman-logo.png') }}" alt="Craftsman" class="product-brand">
                         <h3 class="product-name">Professional Hammer Set</h3>
                         <div class="product-rating">
                             <div class="stars">★★★★★</div>
@@ -245,35 +190,14 @@
                     </div>
                 </div>
 
-                <!-- Product Card 7 -->
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="{{ asset('image/tool7.png') }}" alt="Screwdriver Set">
-                        <div class="product-badge">New</div>
-                        <button class="quick-view">Quick View</button>
-                    </div>
-                    <div class="product-info">
-                        <div class="product-brand">Makita</div>
-                        <h3 class="product-name">Precision Screwdriver Set</h3>
-                        <div class="product-rating">
-                            <div class="stars">★★★★☆</div>
-                            <span class="rating-count">(45)</span>
-                        </div>
-                        <div class="product-price">
-                            <span class="current-price">$49.99</span>
-                        </div>
-                        <button class="add-to-cart">Add to Cart</button>
-                    </div>
-                </div>
-
-                <!-- Product Card 8 -->
+                <!-- Product Card 6 -->
                 <div class="product-card">
                     <div class="product-image">
                         <img src="{{ asset('image/tool8.png') }}" alt="Work Gloves">
                         <button class="quick-view">Quick View</button>
                     </div>
                     <div class="product-info">
-                        <div class="product-brand">Stanley</div>
+                        <img src="{{ asset('image/brands/stanley-logo.png') }}" alt="Stanley" class="product-brand">
                         <h3 class="product-name">Heavy Duty Work Gloves</h3>
                         <div class="product-rating">
                             <div class="stars">★★★★☆</div>
