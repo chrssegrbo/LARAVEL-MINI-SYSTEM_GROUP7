@@ -85,143 +85,66 @@
         <!-- Products Grid -->
         <main class="products-main">
             
-            <div class="products-grid">
-                <!-- Product Card 1 -->
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="{{ asset('image/tool1.png') }}" alt="Professional Drill">
-                        <div class="product-badge">New</div>
-                        <button class="quick-view">Quick View</button>
-                    </div>
-                    <div class="product-info">
-                        <img src="{{ asset('image/bosch.png') }}" alt="Bosch" class="product-brand">
-                        <h3 class="product-name">Professional Cordless Drill</h3>
-                        <div class="product-rating">
-                            <div class="stars">★★★★☆</div>
-                            <span class="rating-count">(124)</span>
-                        </div>
-                        <div class="product-price">
-                            <span class="current-price">$299.99</span>
-                            <span class="original-price">$399.99</span>
-                        </div>
-                        <button class="add-to-cart">Add to Cart</button>
-                    </div>
-                </div>
-
-                <!-- Product Card 2 -->
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="{{ asset('image/tool2.png') }}" alt="Impact Wrench">
-                        <div class="product-badge sale">Sale</div>
-                        <button class="quick-view">Quick View</button>
-                    </div>
-                    <div class="product-info">
-                        <img src="{{ asset('image/brands/milwaukee-logo.png') }}" alt="Milwaukee" class="product-brand">
-                        <h3 class="product-name">Heavy Duty Impact Wrench</h3>
-                        <div class="product-rating">
-                            <div class="stars">★★★★★</div>
-                            <span class="rating-count">(89)</span>
-                        </div>
-                        <div class="product-price">
-                            <span class="current-price">$449.99</span>
-                            <span class="original-price">$549.99</span>
-                        </div>
-                        <button class="add-to-cart">Add to Cart</button>
-                    </div>
-                </div>
-
-                <!-- Product Card 3 -->
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="{{ asset('image/tool3.png') }}" alt="Socket Set">
-                        <button class="quick-view">Quick View</button>
-                    </div>
-                    <div class="product-info">
-                        <img src="{{ asset('image/brands/snapon-logo.png') }}" alt="Snap-on" class="product-brand">
-                        <h3 class="product-name">Professional Socket Set</h3>
-                        <div class="product-rating">
-                            <div class="stars">★★★★★</div>
-                            <span class="rating-count">(156)</span>
-                        </div>
-                        <div class="product-price">
-                            <span class="current-price">$189.99</span>
-                        </div>
-                        <button class="add-to-cart">Add to Cart</button>
-                    </div>
-                </div>
-
-                <!-- Product Card 4 -->
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="{{ asset('image/tool5.png') }}" alt="Tool Box">
-                        <button class="quick-view">Quick View</button>
-                    </div>
-                    <div class="product-info">
-                        <img src="{{ asset('image/brands/stanley-logo.png') }}" alt="Stanley" class="product-brand">
-                        <h3 class="product-name">Rolling Tool Chest</h3>
-                        <div class="product-rating">
-                            <div class="stars">★★★★☆</div>
-                            <span class="rating-count">(67)</span>
-                        </div>
-                        <div class="product-price">
-                            <span class="current-price">$349.99</span>
-                        </div>
-                        <button class="add-to-cart">Add to Cart</button>
-                    </div>
-                </div>
-
-                <!-- Product Card 5 -->
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="{{ asset('image/tool6.png') }}" alt="Hammer">
-                        <button class="quick-view">Quick View</button>
-                    </div>
-                    <div class="product-info">
-                        <img src="{{ asset('image/brands/craftsman-logo.png') }}" alt="Craftsman" class="product-brand">
-                        <h3 class="product-name">Professional Hammer Set</h3>
-                        <div class="product-rating">
-                            <div class="stars">★★★★★</div>
-                            <span class="rating-count">(203)</span>
-                        </div>
-                        <div class="product-price">
-                            <span class="current-price">$79.99</span>
-                        </div>
-                        <button class="add-to-cart">Add to Cart</button>
-                    </div>
-                </div>
-
-                <!-- Product Card 6 -->
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="{{ asset('image/tool8.png') }}" alt="Work Gloves">
-                        <button class="quick-view">Quick View</button>
-                    </div>
-                    <div class="product-info">
-                        <img src="{{ asset('image/brands/stanley-logo.png') }}" alt="Stanley" class="product-brand">
-                        <h3 class="product-name">Heavy Duty Work Gloves</h3>
-                        <div class="product-rating">
-                            <div class="stars">★★★★☆</div>
-                            <span class="rating-count">(112)</span>
-                        </div>
-                        <div class="product-price">
-                            <span class="current-price">$24.99</span>
-                        </div>
-                        <button class="add-to-cart">Add to Cart</button>
-                    </div>
-                </div>
+            <div class="products-grid" id="productsGrid">
+                <!-- Products will be dynamically generated by JavaScript -->
             </div>
 
             <!-- Pagination -->
             <div class="pagination">
-                <button class="page-btn prev" disabled>Previous</button>
+                <button class="page-btn prev" disabled>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
+                    </svg>
+                </button>
                 <button class="page-btn active">1</button>
                 <button class="page-btn">2</button>
                 <button class="page-btn">3</button>
                 <button class="page-btn">...</button>
                 <button class="page-btn">8</button>
-                <button class="page-btn next">Next</button>
+                <button class="page-btn next">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
+                    </svg>
+                </button>
             </div>
         </main>
+    </div>
+
+    <!-- Product Modal -->
+    <div id="productModal" class="product-modal">
+        <div class="modal-overlay" onclick="closeModal()"></div>
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal()">&times;</button>
+            <div class="modal-body">
+                <div class="modal-image">
+                    <img id="modalImage" src="" alt="Product">
+                </div>
+                <div class="modal-info">
+                    <img id="modalBrand" src="" alt="Brand" class="modal-brand">
+                    <h2 id="modalTitle" class="modal-title"></h2>
+                    <div class="modal-rating">
+                        <div id="modalStars" class="stars"></div>
+                        <span id="modalRatingCount" class="rating-count"></span>
+                    </div>
+                    <div class="modal-price">
+                        <span id="modalCurrentPrice" class="current-price"></span>
+                        <span id="modalOriginalPrice" class="original-price"></span>
+                    </div>
+                    <div class="modal-description">
+                        <p>High-quality professional tool designed for maximum performance and durability. Perfect for both professional contractors and DIY enthusiasts.</p>
+                    </div>
+                    <div class="modal-actions">
+                        <button class="modal-add-to-cart">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49c.08-.14.12-.31.12-.48 0-.55-.45-1-1-1H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z"/>
+                            </svg>
+                            Add to Cart
+                        </button>
+                        <button class="modal-buy-now">Buy Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
     <!-- Footer from Home Page -->
@@ -248,7 +171,12 @@
                     </a>
                     <a href="#" class="social-link">
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
-                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zM5.838 12a6.162 6.162 0 1112.324 0 6.162 6.162 0 01-12.324 0zM12 16a4 4 0 110-8 4 4 0 010 8zm4.965-10.405a1.44 1.44 0 112.881.001 1.44 1.44 0 01-2.881-.001z"/>
+                            <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                        </svg>
+                    </a>
+                    <a href="#" class="social-link">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
+                            <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2z"/>
                         </svg>
                     </a>
                 </div>
@@ -294,7 +222,7 @@
                     </div>
                     <div class="contact-item">
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="white">
-                            <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                            <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2z"/>
                         </svg>
                         <span>support@hardstock.com</span>
                     </div>
@@ -334,6 +262,654 @@
     </footer>
 
     <script>
+        // Product data for all 9 pages (54 products total)
+        const allProducts = [
+            // Page 1 Mix: 1 Power Tool, 2 Hand Tools, 1 Outdoor Equipment, 1 Measuring Tool, 1 Storage Solution
+            {
+                id: 1,
+                name: "Craftsman V20 MAX Power Tool Combo Kit",
+                brand: "{{ asset('image/Craftsman.png') }}",
+                image: "{{ asset('image/power1.png') }}",
+                badge: "New",
+                badgeType: "new",
+                stars: "★★★★★",
+                rating: "(245)",
+                currentPrice: "₱14,842",
+                originalPrice: ""
+            },
+            {
+                id: 2,
+                name: "Craftsman 159Pc Mechanics Tool Set",
+                brand: "{{ asset('image/Craftsman.png') }}",
+                image: "{{ asset('image/hand1.png') }}",
+                badge: "Hot",
+                badgeType: "hot",
+                stars: "★★★★☆",
+                rating: "(189)",
+                currentPrice: "₱7,567",
+                originalPrice: "₱8,999"
+            },
+            {
+                id: 3,
+                name: "Snap-on Ratchet Screwdriver",
+                brand: "{{ asset('image/Snapon.png') }}",
+                image: "{{ asset('image/hand2.png') }}",
+                badge: "",
+                badgeType: "",
+                stars: "★★★★★",
+                rating: "(156)",
+                currentPrice: "₱9,181",
+                originalPrice: ""
+            },
+            {
+                id: 4,
+                name: "Stanley 20V FatMax Blower",
+                brand: "{{ asset('image/Stanley.png') }}",
+                image: "{{ asset('image/outdoor1.png') }}",
+                badge: "Sale",
+                badgeType: "sale",
+                stars: "★★★★☆",
+                rating: "(78)",
+                currentPrice: "₱3,799",
+                originalPrice: "₱4,999"
+            },
+            {
+                id: 5,
+                name: "Bosch Laser Distance Measurer",
+                brand: "{{ asset('image/Bosch.png') }}",
+                image: "{{ asset('image/measure1.png') }}",
+                badge: "",
+                badgeType: "",
+                stars: "★★★★★",
+                rating: "(267)",
+                currentPrice: "₱11,500",
+                originalPrice: ""
+            },
+            {
+                id: 6,
+                name: "Craftsman 52″ Tool Cabinet",
+                brand: "{{ asset('image/Craftsman.png') }}",
+                image: "{{ asset('image/storage1.png') }}",
+                badge: "",
+                badgeType: "",
+                stars: "★★★★★",
+                rating: "(234)",
+                currentPrice: "₱59,765",
+                originalPrice: ""
+            },
+            // Page 2 Mix: 2 Power Tools, 2 Hand Tools, 1 Measuring Tool, 1 Storage Solution
+            {
+                id: 7,
+                name: "Craftsman V20 Cordless 1/2″ Impact Wrench",
+                brand: "{{ asset('image/Craftsman.png') }}",
+                image: "{{ asset('image/power2.png') }}",
+                badge: "Hot",
+                badgeType: "hot",
+                stars: "★★★★★",
+                rating: "(178)",
+                currentPrice: "₱12,237",
+                originalPrice: "₱14,999"
+            },
+            {
+                id: 8,
+                name: "Bosch Professional Impact Drill GSB 550",
+                brand: "{{ asset('image/Bosch.png') }}",
+                image: "{{ asset('image/power5.png') }}",
+                badge: "",
+                badgeType: "",
+                stars: "★★★★☆",
+                rating: "(145)",
+                currentPrice: "₱2,399",
+                originalPrice: ""
+            },
+            {
+                id: 9,
+                name: "Craftsman 102Pc Tool Kit",
+                brand: "{{ asset('image/Craftsman.png') }}",
+                image: "{{ asset('image/hand3.png') }}",
+                badge: "Sale",
+                badgeType: "sale",
+                stars: "★★★★☆",
+                rating: "(89)",
+                currentPrice: "₱9,504",
+                originalPrice: "₱11,999"
+            },
+            {
+                id: 10,
+                name: "Snap-on Screwdriver Set 6Pc",
+                brand: "{{ asset('image/Snapon.png') }}",
+                image: "{{ asset('image/hand4.png') }}",
+                badge: "",
+                badgeType: "",
+                stars: "★★★★★",
+                rating: "(203)",
+                currentPrice: "₱13,234",
+                originalPrice: ""
+            },
+            {
+                id: 11,
+                name: "Stanley Tape Measure 25 ft",
+                brand: "{{ asset('image/Stanley.png') }}",
+                image: "{{ asset('image/measure2.png') }}",
+                badge: "",
+                badgeType: "",
+                stars: "★★★★☆",
+                rating: "(67)",
+                currentPrice: "₱260",
+                originalPrice: ""
+            },
+            {
+                id: 12,
+                name: "Stanley 7-Drawer Wheeled Tool Trolley",
+                brand: "{{ asset('image/Stanley.png') }}",
+                image: "{{ asset('image/storage2.png') }}",
+                badge: "New",
+                badgeType: "new",
+                stars: "★★★★★",
+                rating: "(156)",
+                currentPrice: "₱66,060",
+                originalPrice: ""
+            },
+            // Page 3 Mix: 2 Power Tools, 2 Hand Tools, 1 Outdoor Equipment, 1 Storage Solution
+            {
+                id: 13,
+                name: "Stanley SBW920 20V Cordless Impact Wrench",
+                brand: "{{ asset('image/Stanley.png') }}",
+                image: "{{ asset('image/power3.png') }}",
+                badge: "",
+                badgeType: "",
+                stars: "★★★★☆",
+                rating: "(92)",
+                currentPrice: "₱7,300",
+                originalPrice: ""
+            },
+            {
+                id: 14,
+                name: "Bosch 1100W Professional Circular Saw GKS 7000",
+                brand: "{{ asset('image/Bosch.png') }}",
+                image: "{{ asset('image/power6.png') }}",
+                badge: "Hot",
+                badgeType: "hot",
+                stars: "★★★★★",
+                rating: "(189)",
+                currentPrice: "₱4,759",
+                originalPrice: "₱5,999"
+            },
+            {
+                id: 15,
+                name: "Stanley SBI820M2K Cordless Impact Driver",
+                brand: "{{ asset('image/Stanley.png') }}",
+                image: "{{ asset('image/power4.png') }}",
+                badge: "",
+                badgeType: "",
+                stars: "★★★★☆",
+                rating: "(78)",
+                currentPrice: "₱9,680",
+                originalPrice: ""
+            },
+            {
+                id: 16,
+                name: "Milwaukee M12 Rotary Tool",
+                brand: "{{ asset('image/Milwaukee.png') }}",
+                image: "{{ asset('image/hand5.png') }}",
+                badge: "Sale",
+                badgeType: "sale",
+                stars: "★★★★★",
+                rating: "(145)",
+                currentPrice: "₱2,858",
+                originalPrice: "₱3,999"
+            },
+            {
+                id: 17,
+                name: "Bosch GBL 18V-750 Cordless Leaf Blower",
+                brand: "{{ asset('image/Bosch.png') }}",
+                image: "{{ asset('image/outdoor2.png') }}",
+                badge: "",
+                badgeType: "",
+                stars: "★★★★☆",
+                rating: "(67)",
+                currentPrice: "₱9,242",
+                originalPrice: ""
+            },
+            {
+                id: 18,
+                name: "Milwaukee PACKOUT 4-Drawer Toolbox + Rolling Box",
+                brand: "{{ asset('image/Milwaukee.png') }}",
+                image: "{{ asset('image/storage3.png') }}",
+                badge: "New",
+                badgeType: "new",
+                stars: "★★★★★",
+                rating: "(234)",
+                currentPrice: "₱12,492",
+                originalPrice: ""
+            },
+            // Page 4 Mix: 2 Power Tools, 2 Hand Tools, 1 Outdoor Equipment, 1 Storage Solution
+            {
+                id: 19,
+                name: "Milwaukee 20mm SDS+ Rotary Hammer",
+                brand: "{{ asset('image/Milwaukee.png') }}",
+                image: "{{ asset('image/power7.png') }}",
+                badge: "",
+                badgeType: "",
+                stars: "★★★★★",
+                rating: "(267)",
+                currentPrice: "₱16,650",
+                originalPrice: ""
+            },
+            {
+                id: 20,
+                name: "Milwaukee K545S SDS-Max Tool",
+                brand: "{{ asset('image/Milwaukee.png') }}",
+                image: "{{ asset('image/power8.png') }}",
+                badge: "Hot",
+                badgeType: "hot",
+                stars: "★★★★★",
+                rating: "(178)",
+                currentPrice: "₱54,480",
+                originalPrice: ""
+            },
+            {
+                id: 21,
+                name: "Milwaukee 12V Cordless Rotary Tool",
+                brand: "{{ asset('image/Milwaukee.png') }}",
+                image: "{{ asset('image/hand6.png') }}",
+                badge: "",
+                badgeType: "",
+                stars: "★★★★☆",
+                rating: "(89)",
+                currentPrice: "₱4,450",
+                originalPrice: ""
+            },
+            {
+                id: 22,
+                name: "Bosch 108Pc Hand Tool Set",
+                brand: "{{ asset('image/Bosch.png') }}",
+                image: "{{ asset('image/hand7.png') }}",
+                badge: "Sale",
+                badgeType: "sale",
+                stars: "★★★★★",
+                rating: "(203)",
+                currentPrice: "₱6,005",
+                originalPrice: "₱7,999"
+            },
+            {
+                id: 23,
+                name: "GBL 18V-120 Cordless Blower",
+                brand: "{{ asset('image/Bosch.png') }}",
+                image: "{{ asset('image/outdoor3.png') }}",
+                badge: "",
+                badgeType: "",
+                stars: "★★★★☆",
+                rating: "(145)",
+                currentPrice: "₱10,269",
+                originalPrice: ""
+            },
+            {
+                id: 24,
+                name: "Bosch L-BOXX 136 Storage Case",
+                brand: "{{ asset('image/Bosch.png') }}",
+                image: "{{ asset('image/storage4.png') }}",
+                badge: "",
+                badgeType: "",
+                stars: "★★★★☆",
+                rating: "(67)",
+                currentPrice: "₱1,930",
+                originalPrice: ""
+            },
+            // Page 5 Mix: 1 Power Tool, 3 Hand Tools, 1 Outdoor Equipment, 1 Storage Solution
+            {
+                id: 25,
+                name: "Stanley 1/2\" Socket Wrench",
+                brand: "{{ asset('image/Stanley.png') }}",
+                image: "{{ asset('image/hand8.png') }}",
+                badge: "",
+                badgeType: "",
+                stars: "★★★★☆",
+                currentPrice: "₱120",
+                originalPrice: ""
+            },
+            {
+                id: 27,
+                name: "Craftsman Screwdriver Set",
+                brand: "{{ asset('image/Craftsman.png') }}",
+                image: "{{ asset('image/hand9.png') }}",
+                badge: "",
+                badgeType: "",
+                stars: "★★★★★",
+                rating: "(156)",
+                currentPrice: "₱4,108",
+                originalPrice: ""
+            },
+            {
+                id: 28,
+                name: "Craftsman Mechanics Set with 2-Drawer Box",
+                brand: "{{ asset('image/Craftsman.png') }}",
+                image: "{{ asset('image/storage5.png') }}",
+                badge: "New",
+                badgeType: "new",
+                stars: "★★★★☆",
+                rating: "(89)",
+                currentPrice: "₱430",
+                originalPrice: ""
+            },
+            {
+                id: 29,
+                name: "Bosch GBL 550 Air Blower",
+                brand: "{{ asset('image/Bosch.png') }}",
+                image: "{{ asset('image/outdoor4.png') }}",
+                badge: "",
+                badgeType: "",
+                stars: "★★★★☆",
+                rating: "(145)",
+                currentPrice: "₱3,289",
+                originalPrice: ""
+            },
+            {
+                id: 30,
+                name: "Stanley Metal Latch Rolling Tool Box",
+                brand: "{{ asset('image/Stanley.png') }}",
+                image: "{{ asset('image/storage6.png') }}",
+                badge: "Hot",
+                badgeType: "hot",
+                stars: "★★★★★",
+                rating: "(203)",
+                currentPrice: "₱3,100",
+                originalPrice: "₱3,999"
+            },
+            // Page 6 Mix: 1 Power Tool, 2 Hand Tools, 2 Outdoor Equipment, 1 Storage Solution
+            {
+                id: 31,
+                name: "Milwaukee 0884-20 M18 18 Volt Cordless Compact Yard Leaf Blower",
+                brand: "{{ asset('image/Milwaukee.png') }}",
+                image: "{{ asset('image/outdoor5.png') }}",
+                badge: "",
+                badgeType: "",
+                stars: "★★★★★",
+                rating: "(267)",
+                currentPrice: "₱7,500",
+                originalPrice: ""
+            },
+            {
+                id: 32,
+                name: "Stanley PowerLock 8m Tape",
+                brand: "{{ asset('image/Stanley.png') }}",
+                image: "{{ asset('image/tool32.png') }}",
+                badge: "",
+                badgeType: "",
+                stars: "★★★★☆",
+                rating: "(178)",
+                currentPrice: "₱900",
+                originalPrice: ""
+            },
+            {
+                id: 33,
+                name: "Stanley FatMax 10m Tape",
+                brand: "{{ asset('image/Stanley.png') }}",
+                image: "{{ asset('image/tool33.png') }}",
+                badge: "Sale",
+                badgeType: "sale",
+                stars: "★★★★☆",
+                rating: "(89)",
+                currentPrice: "₱739",
+                originalPrice: "₱999"
+            },
+            {
+                id: 34,
+                name: "Milwaukee 2825-20ST 18V Cordless Brushless String Grass Trimmer",
+                brand: "{{ asset('image/Milwaukee.png') }}",
+                image: "{{ asset('image/tool34.png') }}",
+                badge: "Hot",
+                badgeType: "hot",
+                stars: "★★★★★",
+                rating: "(145)",
+                currentPrice: "₱21,853",
+                originalPrice: ""
+            },
+            {
+                id: 35,
+                name: "Stanley PowerLock 5m Tape",
+                brand: "{{ asset('image/Stanley.png') }}",
+                image: "{{ asset('image/tool35.png') }}",
+                badge: "",
+                badgeType: "",
+                stars: "★★★★☆",
+                rating: "(67)",
+                currentPrice: "₱340",
+                originalPrice: ""
+            },
+            {
+                id: 36,
+                name: "Snap-on 40″ Seven-Drawer Heritage Series Roll-Cab Tool Chest",
+                brand: "{{ asset('image/Snapon.png') }}",
+                image: "{{ asset('image/tool36.png') }}",
+                badge: "New",
+                rating: "(234)",
+                currentPrice: "₱150,000",
+                originalPrice: ""
+            },
+            // Page 7 Mix: 1 Power Tool, 1 Hand Tool, 2 Measuring Tools, 2 Storage Solutions
+            {
+                id: 37,
+                name: "Stanley PowerLock 5m (Higher-end)",
+                brand: "{{ asset('image/Stanley.png') }}",
+                image: "{{ asset('image/tool37.png') }}",
+                badge: "",
+                badgeType: "",
+                stars: "★★★★☆",
+                rating: "(92)",
+                currentPrice: "₱1,098",
+                originalPrice: ""
+            },
+            {
+                id: 38,
+                name: "Snap-on 55″ Double-Bank Tool Chest (10-Drawer)",
+                brand: "{{ asset('image/Snapon.png') }}",
+                image: "{{ asset('image/tool38.png') }}",
+                badge: "Hot",
+                badgeType: "hot",
+                stars: "★★★★★",
+                rating: "(178)",
+                currentPrice: "₱370,000",
+                originalPrice: ""
+            }
+        ];
+
+        // Pagination state
+        let currentPage = 1;
+        const productsPerPage = 6;
+        const totalPages = 7;
+
+        // Initialize products on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            renderProducts(currentPage);
+            renderPagination();
+        });
+
+        // Function to render products for current page
+        function renderProducts(page) {
+            const startIndex = (page - 1) * productsPerPage;
+            const endIndex = startIndex + productsPerPage;
+            const pageProducts = allProducts.slice(startIndex, endIndex);
+            
+            const productsGrid = document.getElementById('productsGrid');
+            productsGrid.innerHTML = '';
+            
+            pageProducts.forEach(product => {
+                const productCard = createProductCard(product);
+                productsGrid.innerHTML += productCard;
+            });
+            
+            // Re-attach event listeners for new elements
+            attachEventListeners();
+            
+            // Update results count
+            const resultsCount = document.querySelector('.results-count');
+            if (resultsCount) {
+                resultsCount.textContent = pageProducts.length;
+            }
+        }
+
+        // Function to create product card HTML
+        function createProductCard(product) {
+            const badgeHtml = product.badge ? 
+                `<div class="product-badge ${product.badgeType}">${product.badge}</div>` : '';
+            
+            const originalPriceHtml = product.originalPrice ? 
+                `<span class="original-price">${product.originalPrice}</span>` : '';
+            
+            return `
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="${product.image}" alt="${product.name}">
+                        ${badgeHtml}
+                        <button class="view-btn">View</button>
+                    </div>
+                    <div class="product-info">
+                        <img src="${product.brand}" alt="${product.name}" class="product-brand">
+                        <h4 class="product-name">${product.name}</h4>
+                        <div class="product-rating">
+                            <div class="stars">${product.stars}</div>
+                            <span class="rating-count">${product.rating}</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">${product.currentPrice}</span>
+                            ${originalPriceHtml}
+                        </div>
+                        <div class="product-actions">
+                            <button class="add-to-cart-icon">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49c.08-.14.12-.31.12-.48 0-.55-.45-1-1-1H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z"/>
+                                </svg>
+                            </button>
+                            <button class="buy-now">Buy Now</button>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        // Function to render pagination buttons
+        function renderPagination() {
+            const paginationContainer = document.querySelector('.pagination');
+            paginationContainer.innerHTML = '';
+            
+            // Previous button
+            paginationContainer.innerHTML += `
+                <button class="page-btn prev" ${currentPage === 1 ? 'disabled' : ''}>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
+                    </svg>
+                </button>
+            `;
+            
+            // Page numbers
+            for (let i = 1; i <= totalPages; i++) {
+                if (i === 1 || i === totalPages || (i >= currentPage - 1 && i <= currentPage + 1)) {
+                    paginationContainer.innerHTML += `
+                        <button class="page-btn ${i === currentPage ? 'active' : ''}" data-page="${i}">${i}</button>
+                    `;
+                } else if (i === currentPage - 2 || i === currentPage + 2) {
+                    paginationContainer.innerHTML += `
+                        <button class="page-btn">...</button>
+                    `;
+                }
+            }
+            
+            // Next button
+            paginationContainer.innerHTML += `
+                <button class="page-btn next" ${currentPage === totalPages ? 'disabled' : ''}>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
+                    </svg>
+                </button>
+            `;
+            
+            // Attach pagination event listeners
+            attachPaginationListeners();
+        }
+
+        // Function to attach event listeners to dynamically created elements
+        function attachEventListeners() {
+            // View button functionality
+            document.querySelectorAll('.view-btn').forEach(button => {
+                button.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const productCard = this.closest('.product-card');
+                    openModal(productCard);
+                });
+            });
+
+            // Add to cart icon functionality
+            document.querySelectorAll('.add-to-cart-icon').forEach(button => {
+                button.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const productCard = this.closest('.product-card');
+                    const productName = productCard.querySelector('.product-name').textContent;
+                    
+                    // Visual feedback
+                    this.style.background = '#dc2626';
+                    this.style.color = 'white';
+                    setTimeout(() => {
+                        this.style.background = '';
+                        this.style.color = '';
+                    }, 1500);
+                    
+                    console.log(`Added to cart: ${productName}`);
+                });
+            });
+
+            // Buy now functionality
+            document.querySelectorAll('.buy-now').forEach(button => {
+                button.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const productCard = this.closest('.product-card');
+                    const productName = productCard.querySelector('.product-name').textContent;
+                    
+                    // Visual feedback
+                    this.textContent = 'Processing...';
+                    this.style.background = '#10b981';
+                    setTimeout(() => {
+                        this.textContent = 'Buy Now';
+                        this.style.background = '';
+                    }, 1500);
+                    
+                    console.log(`Buy now: ${productName}`);
+                });
+            });
+        }
+
+        // Function to attach pagination event listeners
+        function attachPaginationListeners() {
+            document.querySelectorAll('.page-btn[data-page]').forEach(button => {
+                button.addEventListener('click', function() {
+                    const page = parseInt(this.getAttribute('data-page'));
+                    if (page !== currentPage) {
+                        currentPage = page;
+                        renderProducts(currentPage);
+                        renderPagination();
+                    }
+                });
+            });
+
+            // Previous button
+            document.querySelector('.page-btn.prev').addEventListener('click', function() {
+                if (currentPage > 1) {
+                    currentPage--;
+                    renderProducts(currentPage);
+                    renderPagination();
+                }
+            });
+
+            // Next button
+            document.querySelector('.page-btn.next').addEventListener('click', function() {
+                if (currentPage < totalPages) {
+                    currentPage++;
+                    renderProducts(currentPage);
+                    renderPagination();
+                }
+            });
+        }
+
         // Filter functionality
         document.querySelectorAll('.filter-list input').forEach(input => {
             input.addEventListener('change', function() {
@@ -345,94 +921,142 @@
         const priceSlider = document.querySelector('.price-slider');
         const priceInputs = document.querySelectorAll('.price-inputs input');
         
-        priceSlider.addEventListener('input', function() {
-            const value = this.value;
-            priceInputs[1].value = value;
-            filterProducts();
-        });
-
-        priceInputs.forEach(input => {
-            input.addEventListener('change', function() {
+        if (priceSlider) {
+            priceSlider.addEventListener('input', function() {
+                const value = this.value;
+                priceInputs[1].value = value;
                 filterProducts();
             });
-        });
+
+            priceInputs.forEach(input => {
+                input.addEventListener('change', function() {
+                    filterProducts();
+                });
+            });
+        }
 
         // Clear filters
         document.querySelector('.clear-filters').addEventListener('click', function() {
             document.querySelectorAll('.filter-list input').forEach(input => {
                 input.checked = false;
             });
-            document.querySelectorAll('.price-inputs input').forEach(input => {
-                input.value = input.placeholder === 'Min' ? '0' : '10000';
-            });
-            priceSlider.value = 5000;
+            if (priceInputs.length > 0) {
+                priceInputs.forEach(input => {
+                    input.value = input.placeholder === 'Min' ? '0' : '10000';
+                });
+                if (priceSlider) priceSlider.value = 5000;
+            }
             filterProducts();
         });
 
-        // Quick view functionality
-        document.querySelectorAll('.quick-view').forEach(button => {
-            button.addEventListener('click', function(e) {
-                e.preventDefault();
-                const productCard = this.closest('.product-card');
-                const productName = productCard.querySelector('.product-name').textContent;
-                alert(`Quick view: ${productName}`);
-            });
+        // Modal functionality
+        function openModal(productCard) {
+            const modal = document.getElementById('productModal');
+            
+            // Get product data
+            const productImage = productCard.querySelector('.product-image img').src;
+            const productBrand = productCard.querySelector('.product-brand').src;
+            const productName = productCard.querySelector('.product-name').textContent;
+            const productStars = productCard.querySelector('.stars').textContent;
+            const productRatingCount = productCard.querySelector('.rating-count').textContent;
+            const currentPrice = productCard.querySelector('.current-price').textContent;
+            const originalPrice = productCard.querySelector('.original-price')?.textContent || '';
+            
+            // Populate modal
+            document.getElementById('modalImage').src = productImage;
+            document.getElementById('modalBrand').src = productBrand;
+            document.getElementById('modalTitle').textContent = productName;
+            document.getElementById('modalStars').textContent = productStars;
+            document.getElementById('modalRatingCount').textContent = productRatingCount;
+            document.getElementById('modalCurrentPrice').textContent = currentPrice;
+            document.getElementById('modalOriginalPrice').textContent = originalPrice;
+            
+            // Show modal
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('productModal');
+            modal.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        // Modal add to cart functionality
+        document.querySelector('.modal-add-to-cart').addEventListener('click', function() {
+            const productName = document.getElementById('modalTitle').textContent;
+            
+            // Visual feedback
+            this.style.background = '#dc2626';
+            this.style.color = 'white';
+            this.innerHTML = '<svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49c.08-.14.12-.31.12-.48 0-.55-.45-1-1-1H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z"/></svg> Added!';
+            
+            setTimeout(() => {
+                this.style.background = '';
+                this.style.color = '';
+                this.innerHTML = '<svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49c.08-.14.12-.31.12-.48 0-.55-.45-1-1-1H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z"/></svg> Add to Cart';
+            }, 1500);
+            
+            console.log(`Added to cart from modal: ${productName}`);
         });
 
-        // Add to cart functionality
-        document.querySelectorAll('.add-to-cart').forEach(button => {
-            button.addEventListener('click', function(e) {
-                e.preventDefault();
-                const productCard = this.closest('.product-card');
-                const productName = productCard.querySelector('.product-name').textContent;
-                this.textContent = 'Added!';
-                this.style.background = '#10b981';
-                setTimeout(() => {
-                    this.textContent = 'Add to Cart';
-                    this.style.background = '';
-                }, 2000);
-            });
+        // Modal buy now functionality
+        document.querySelector('.modal-buy-now').addEventListener('click', function() {
+            const productName = document.getElementById('modalTitle').textContent;
+            
+            // Visual feedback
+            this.textContent = 'Processing...';
+            this.style.background = '#10b981';
+            
+            setTimeout(() => {
+                this.textContent = 'Buy Now';
+                this.style.background = '';
+            }, 1500);
+            
+            console.log(`Buy now from modal: ${productName}`);
         });
 
-        // Search functionality
-        const searchInput = document.querySelector('.search-box input');
-        const searchBtn = document.querySelector('.search-btn');
-        
-        searchBtn.addEventListener('click', function() {
-            filterProducts();
-        });
-
-        searchInput.addEventListener('keypress', function(e) {
-            if (e.key === 'Enter') {
-                filterProducts();
+        // Close modal on escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeModal();
             }
         });
 
+        // Search functionality
+        const searchInput = document.querySelector('.search-input');
+        const searchBtn = document.querySelector('.search-btn');
+        
+        if (searchBtn && searchInput) {
+            searchBtn.addEventListener('click', function() {
+                filterProducts();
+            });
+
+            searchInput.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    filterProducts();
+                }
+            });
+        }
+
         // Sort functionality
-        document.querySelector('.sort-select').addEventListener('change', function() {
-            filterProducts();
-        });
+        const sortSelect = document.querySelector('.sort-select');
+        if (sortSelect) {
+            sortSelect.addEventListener('change', function() {
+                filterProducts();
+            });
+        }
 
         // Filter products function
         function filterProducts() {
             // In a real application, this would filter the products
             console.log('Filtering products...');
             const resultsCount = document.querySelector('.results-count');
-            const randomCount = Math.floor(Math.random() * 20) + 10;
-            resultsCount.textContent = randomCount;
+            if (resultsCount) {
+                const randomCount = Math.floor(Math.random() * 20) + 10;
+                resultsCount.textContent = randomCount;
+            }
         }
-
-        // Pagination
-        document.querySelectorAll('.page-btn').forEach(button => {
-            button.addEventListener('click', function() {
-                if (!this.disabled) {
-                    document.querySelectorAll('.page-btn').forEach(btn => btn.classList.remove('active'));
-                    this.classList.add('active');
-                    // In a real application, this would load the next page
-                    filterProducts();
-                }
-            });
-        });
     </script>
 </body>
 </html>
